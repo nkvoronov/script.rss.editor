@@ -2,7 +2,7 @@ import sys, os
 import xbmc, xbmcaddon
 
 # Script constants
-__addon__      = xbmcaddon.Addon()
+__addon__      = xbmcaddon.Addon(id='script.rss.editor')
 __version__    = __addon__.getAddonInfo('version')
 __language__   = __addon__.getLocalizedString
 __cwd__        = __addon__.getAddonInfo('path')

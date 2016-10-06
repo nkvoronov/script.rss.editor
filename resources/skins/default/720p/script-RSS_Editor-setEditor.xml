@@ -5,13 +5,13 @@
     <animation effect="fade" time="400">WindowClose</animation>
     <coordinates>
         <system>1</system>
-        <posx>105</posx>
-        <posy>130</posy>
+        <left>105</left>
+        <top>130</top>
     </coordinates>
     <controls>
         <control type="image">
-            <posx>-300</posx>
-            <posy>-300</posy>
+            <left>-300</left>
+            <top>-300</top>
             <width>1300</width>
             <height>1300</height>
             <texture>black.png</texture>
@@ -19,30 +19,30 @@
         </control>
         <control type="image">
             <description>background image</description>
-            <posx>-15</posx>
-            <posy>-15</posy>
+            <left>-15</left>
+            <top>-15</top>
             <width>540</width>
             <height>375</height>
             <texture>dialog-panel2.png</texture>
         </control>
         <control type="label" id="2">
             <description>Heading Label</description>
-            <posx>10</posx>
-            <posy>-2</posy>
+            <left>10</left>
+            <top>-2</top>
             <width>500</width>
             <align>left</align>
             <textcolor>dialogheader</textcolor>
         </control>
         <control type="label" id="3">
             <description>List Label</description>
-            <posx>10</posx>
-            <posy>35</posy>
+            <left>10</left>
+            <top>35</top>
             <width>500</width>
             <align>left</align>
         </control>
         <control type="list" id="10">
-            <posx>10</posx>
-            <posy>60</posy>
+            <left>10</left>
+            <top>60</top>
             <width>380</width>
             <height>160</height>
             <onup>9001</onup>
@@ -53,15 +53,15 @@
             <scrolltime>200</scrolltime>
             <itemlayout height="40">
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
+                    <left>0</left>
+                    <top>0</top>
                     <width>380</width>
                     <height>32</height>
                     <texture>input-nofocus.png</texture>
                 </control>
                 <control type="label">
-                    <posx>5</posx>
-                    <posy>0</posy>
+                    <left>5</left>
+                    <top>0</top>
                     <width>370</width>
                     <height>32</height>
                     <aligny>center</aligny>
@@ -71,24 +71,24 @@
             </itemlayout>
             <focusedlayout height="40">
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
+                    <left>0</left>
+                    <top>0</top>
                     <width>380</width>
                     <height>32</height>
                     <texture>input-nofocus.png</texture>
                     <visible>!Control.hasfocus(10)</visible>
                 </control>
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
+                    <left>0</left>
+                    <top>0</top>
                     <width>380</width>
                     <height>32</height>
                     <texture>input-focus.png</texture>
                     <visible>Control.hasfocus(14)|Control.hasfocus(10)|Control.hasfocus(11)</visible>
                 </control>
                 <control type="label">
-                    <posx>5</posx>
-                    <posy>0</posy>
+                    <left>5</left>
+                    <top>0</top>
                     <width>370</width>
                     <height>32</height>
                     <aligny>center</aligny>
@@ -100,8 +100,8 @@
         <control type="group" id="9000">
             <control type="button" id="11">
                 <description>Change Set Button</description>
-                <posx>400</posx>
-                <posy>140</posy>
+                <left>400</left>
+                <top>140</top>
                 <width>110</width>
                 <height>32</height>
                 <textoffsetx>12</textoffsetx>
@@ -116,8 +116,8 @@
             </control>
             <control type="button" id="13">
                 <description>Add Button</description>
-                <posx>400</posx>
-                <posy>60</posy>
+                <left>400</left>
+                <top>60</top>
                 <width>110</width>
                 <height>32</height>
                 <label>15019</label>
@@ -133,8 +133,8 @@
             </control>
             <control type="button" id="14">
                 <description>Remove Button</description>
-                <posx>400</posx>
-                <posy>100</posy>
+                <left>400</left>
+                <top>100</top>
                 <width>110</width>
                 <height>32</height>
                 <label>1210</label>
@@ -152,8 +152,8 @@
         <control type="group" id="9001">
             <control type="button" id="18">
                 <description>Ok Button</description>
-                <posx>285</posx>
-                <posy>290</posy>
+                <left>285</left>
+                <top>290</top>
                 <width>110</width>
                 <height>32</height>
                 <textoffsetx>12</textoffsetx>
@@ -169,8 +169,8 @@
             </control>
             <control type="button" id="19">
                 <description>Cancel Button</description>
-                <posx>400</posx>
-                <posy>290</posy>
+                <left>400</left>
+                <top>290</top>
                 <width>110</width>
                 <height>32</height>
                 <textoffsetx>12</textoffsetx>

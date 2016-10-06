@@ -20,13 +20,13 @@ class GUI(xbmcgui.WindowXMLDialog):
         self.defineControls()
         self.feedsList = self.parser.feedsList[self.setNum]['feedslist'] #shortname
         if not self.feedsList:
-            xbmcgui.Dialog().ok(getLS(40)+'RssFeeds.xml', 'RssFeeds.xml '+getLS(41), getLS(42), getLS(43))
+            xbmcgui.Dialog().ok(getLS(32040)+'RssFeeds.xml', 'RssFeeds.xml '+getLS(32041), getLS(32042), getLS(32043))
             self.closeDialog()
         self.showDialog()
 
     def defineControls(self):
         #actions
-        self.action_cancel_dialog = (9, 10)
+        self.action_cancel_dialog = ( 9, 10, 92, 216, 247, 257, 275, 61467, 61448 )
         #control ids
         self.control_heading_label_id       = 2
         self.control_list_label_id          = 3
@@ -47,9 +47,9 @@ class GUI(xbmcgui.WindowXMLDialog):
         self.cancel_button      = self.getControl(self.control_cancel_button_id)
 
     def showDialog(self):
-        self.heading_label.setLabel(getLS(0))
-        self.list_label.setLabel(getLS(12))
-        self.changeSet_button.setLabel(getLS(1))
+        self.heading_label.setLabel(getLS(32000))
+        self.list_label.setLabel(getLS(32012))
+        self.changeSet_button.setLabel(getLS(32001))
         self.updateFeedsList()
 
     def closeDialog(self):
@@ -78,7 +78,7 @@ class GUI(xbmcgui.WindowXMLDialog):
         #change/modify set
         elif controlId == self.control_changeSet_button_id:
             import setEditor
-            setEditorUI = setEditor.GUI("script-RSS_Editor-setEditor.xml", __cwd__, "default", setNum = self.setNum)
+            setEditorUI = setEditor.GUI("script-RSS_Editor-setEditor.xml", __cwd__, "Default", setNum = self.setNum)
             self.close()
             del setEditorUI
         #save xml
@@ -104,11 +104,11 @@ class GUI(xbmcgui.WindowXMLDialog):
             self.feedsList = [{'url':'http://', 'updateinterval':'30'}]
 
     def getNewFeed(self, url = 'http://', newUpdateInterval = '30'):
-        kb = xbmc.Keyboard(url, getLS(12), False)
+        kb = xbmc.Keyboard(url, getLS(32012), False)
         kb.doModal()
         if kb.isConfirmed():
             newUrl = kb.getText()
-            newUpdateInterval = xbmcgui.Dialog().numeric(0, getLS(13), newUpdateInterval)
+            newUpdateInterval = xbmcgui.Dialog().numeric(0, getLS(32013), newUpdateInterval)
         else:
             newUrl = None
         return newUrl, newUpdateInterval
@@ -118,6 +118,6 @@ class GUI(xbmcgui.WindowXMLDialog):
         for feed in self.feedsList:
             self.list.addItem(feed['url'])
         if self.setNum == 'set1':
-            self.list_label.setLabel(getLS(14) % (''))
+            self.list_label.setLabel(getLS(32014) % (''))
         else:
-            self.list_label.setLabel(getLS(14) % ('('+self.setNum+')'))
+            self.list_label.setLabel(getLS(32014) % ('('+self.setNum+')'))

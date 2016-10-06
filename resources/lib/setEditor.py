@@ -19,13 +19,13 @@ class GUI(xbmcgui.WindowXMLDialog):
     def onInit(self):
         self.defineControls()
         if not self.parser.feedsList:
-            xbmcgui.Dialog().ok(getLS(40)+'RssFeeds.xml', 'RssFeeds.xml '+getLS(41), getLS(42), getLS(43))
+            xbmcgui.Dialog().ok(getLS(32040)+'RssFeeds.xml', 'RssFeeds.xml '+getLS(32041), getLS(32042), getLS(32043))
             self.closeDialog()
         self.showDialog()
 
     def defineControls(self):
         #actions
-        self.action_cancel_dialog = (9, 10)
+        self.action_cancel_dialog = ( 9, 10, 92, 216, 247, 257, 275, 61467, 61448 )
         #control ids
         self.control_heading_label_id       = 2
         self.control_list_label_id          = 3
@@ -48,15 +48,15 @@ class GUI(xbmcgui.WindowXMLDialog):
         self.dFeedsList = [{'url':'http://feeds.feedburner.com/xbmc', 'updateinterval':'30'}]
 
     def showDialog(self):
-        self.heading_label.setLabel(getLS(30))
-        self.list_label.setLabel(getLS(24))
-        self.modifySet_button.setLabel(getLS(6))
+        self.heading_label.setLabel(getLS(32030))
+        self.list_label.setLabel(getLS(32024))
+        self.modifySet_button.setLabel(getLS(32006))
         self.updateSetsList()
 
     def closeDialog(self):
         """Close the Set Editor Dialog and open RSS Editor Dialog"""
         import rssEditor
-        rssEditorUI = rssEditor.GUI("script-RSS_Editor-rssEditor.xml", __cwd__, "default", setNum = self.setNum)
+        rssEditorUI = rssEditor.GUI("script-RSS_Editor-rssEditor.xml", __cwd__, "Default", setNum = self.setNum)
         self.close()
         del rssEditorUI
 
@@ -126,7 +126,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             #add default information
             self.parser.feedsList[newSetLabel] = {'feedslist':self.dFeedsList, 'attrs':{'rtl':rtl, 'id':newSetNum}}
 
-    def getSetNum(self, defaultSetNum, title = getLS(25)):
+    def getSetNum(self, defaultSetNum, title = getLS(32025)):
         newSetNum = str(xbmcgui.Dialog().numeric(0, title, str(defaultSetNum)))
         if self.setNumExists(newSetNum) and newSetNum != defaultSetNum:
             self.getSetNum(defaultSetNum, getLS(50) % newSetNum)
@@ -139,7 +139,7 @@ class GUI(xbmcgui.WindowXMLDialog):
 
     def containsRTLText(self):
         """Returns xml style lowercase 'true' or 'false'"""
-        return str(bool(xbmcgui.Dialog().yesno(getLS(27), getLS(27)))).lower()
+        return str(bool(xbmcgui.Dialog().yesno(getLS(32027), getLS(32027)))).lower()
 
     def removeSet(self, setNum = None):
         """Removes a set or if set is required resets it to default"""
@@ -147,7 +147,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             setNum = self.list.getSelectedItem().getLabel()
         if setNum == 'set1':
             #Ask if user wants to set everything to default.
-            if xbmcgui.Dialog().yesno(getLS(45), getLS(46), getLS(47)):
+            if xbmcgui.Dialog().yesno(getLS(32045), getLS(32046), getLS(32047)):
                 self.parser.feedsList[setNum] = {'feedslist':self.dFeedsList, 'attrs':{'rtl':'false','id':'1'}}
         else:
             del self.parser.feedsList[setNum]
@@ -156,4 +156,4 @@ class GUI(xbmcgui.WindowXMLDialog):
         self.list.reset()
         for setNum in sorted(self.parser.feedsList.keys()):
             self.list.addItem(setNum)
-            self.list_label.setLabel(getLS(24))
+            self.list_label.setLabel(getLS(32024))
