@@ -32,20 +32,23 @@ def writexml(self, writer, indent="", addindent="", newl=""):
 # monkey patch to fix whitespace issues with toprettyxml
 Element.writexml = writexml
 #enable localization
-getLS = sys.modules[ "__main__" ].LANGUAGE
+getLS = sys.modules[ "__main__" ].__language__
 
 
 class XMLParser:
 
     def __init__(self):
-        self.RssFeedsPath = xbmc.translatePath('special://userdata/RssFeeds.xml').decode("utf-8")
+        if xbmc:
+            self.RssFeedsPath = xbmc.translatePath('special://userdata/RssFeeds.xml').decode("utf-8")
+        else:
+            self.RssFeedsPath = r'C:\Documents and Settings\Xerox\Application Data\XBMC\userdata\RssFeeds.xml'
         sane = self.checkRssFeedPathSanity()
         if sane:
             try:
                 self.feedsTree = parse(self.RssFeedsPath)
             except:
                 log('[script] RSS Editor --> Failed to parse ' + unicodedata.normalize( 'NFKD', self.RssFeedsPath ).encode( 'ascii', 'ignore' ))
-                regen = xbmcgui.Dialog().yesno(getLS(32040), getLS(32051), getLS(32052), getLS(32053))
+                regen = xbmcgui.Dialog().yesno(getLS(40), getLS(51), getLS(52), getLS(53))
                 if regen:
                     log('[script] RSS Editor --> Attempting to Regenerate RssFeeds.xml')
                     xml = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<rssfeeds>\n\
@@ -134,4 +137,7 @@ class XMLParser:
 
     def refreshFeed(self):
         """Refresh XBMC's rss feed so changes can be seen immediately"""
-        xbmc.executebuiltin('refreshrss()')
+        if xbmc:
+            xbmc.executebuiltin('refreshrss()')
+        else:
+            log('kthx')
