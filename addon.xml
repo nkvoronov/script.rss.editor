@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.rss.editor"
     name="RSS Editor"
-    version="2.0.4.003"
+    version="2.0.4.004"
     provider-name="rwparris2, YLLOW_DRAGON">
     <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -13,5 +13,7 @@
         <summary lang="ru">Скрипт для редактирования бегущей строки RSS KODI</summary>
         <description lang="en">A Script for editing XBMC's built in RSS Ticker</description>
         <description lang="ru">Скрипт для редактирования бегущей строки RSS KODI</description>
+        <email>nkvoronov@gmail.com</email>
+        <source>https://github.com/nkvoronov/script.rss.editor.git</source>
     </extension>
 </addon>
