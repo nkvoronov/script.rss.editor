@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.rss.editor"
-       name="RSS Editor"
-       version="2.0.4.002"
-       provider-name="rwparris2, YLLOW_DRAGON">
-  <requires>
+    name="RSS Editor"
+    version="2.0.4.003"
+    provider-name="rwparris2, YLLOW_DRAGON">
+    <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.script"
-             library="default.py" />
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">A Script for editing XBMC's built in RSS Ticker</summary>
-    <summary lang="ru">Скрипт для редактирования бегущей строки RSS KODI</summary>
-    <description lang="en">A Script for editing XBMC's built in RSS Ticker</description>
-    <description lang="ru">Скрипт для редактирования бегущей строки RSS KODI</description>
-  </extension>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary lang="en">A Script for editing XBMC's built in RSS Ticker</summary>
+        <summary lang="ru">Скрипт для редактирования бегущей строки RSS KODI</summary>
+        <description lang="en">A Script for editing XBMC's built in RSS Ticker</description>
+        <description lang="ru">Скрипт для редактирования бегущей строки RSS KODI</description>
+    </extension>
 </addon>
