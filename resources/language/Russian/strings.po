@@ -42,7 +42,7 @@ msgstr "Введите пути ваших RSS-каналов %s"
 
 msgctxt "#32024"
 msgid "Select a Set "
-msgstr "Выбрать набора"
+msgstr "Выбрать набор"
 
 msgctxt "#32025"
 msgid "Set ID"
