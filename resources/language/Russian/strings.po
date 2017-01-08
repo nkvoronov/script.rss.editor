@@ -26,7 +26,7 @@ msgstr "Изменить набор"
 
 msgctxt "#32006"
 msgid "Edit Attributes"
-msgstr "Редактирование атрибутов"
+msgstr "Редактировать"
 
 msgctxt "#32012"
 msgid "RSS Feed URL"
