@@ -4,6 +4,7 @@
 # Addon Provider: Team Kodi
 msgid ""
 msgstr ""
+
 "Project-Id-Version: XBMC Addons\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
