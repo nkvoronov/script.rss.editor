@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.rss.editor"
-       name="RSS Editor"
-       version="3.0.3.004"
-       provider-name="rwparris2, Team Kodi, YLLOW_DRAGON">
-  <requires>
-    <import addon="xbmc.python" version="2.25.0"/>
-  </requires>
-  <extension point="xbmc.python.script"
-             library="default.py" />
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary lang="en">A Script for editing Kodi's built in RSS Ticker</summary>
-    <summary lang="hu">RSS forrás szerkesztő</summary> 
-    <summary lang="de">Skript zum Bearbeiten des Kodi internen RSS Tickers</summary>
-    <summary lang="ru">Скрипт для редактирования бегущей строки RSS KODI</summary>
-    <description lang="en">A Script for editing Kodi's built in RSS Ticker</description>
-    <description lang="hu">A szkript képes szerkeszteni az Kodi beépített RSS forrás készletét</description>
-    <description lang="de">Skript zum Bearbeiten des Kodi internen RSS Tickers</description>
-    <description lang="ru">Скрипт для редактирования бегущей строки RSS KODI</description>
-    <language></language>
-    <license>GNU GENERAL PUBLIC LICENSE Version 2</license>
-    <forum></forum>
-    <website></website>
-    <email>nkvoronov@gmail.com</email>
-    <source>https://github.com/nkvoronov/script.rss.editor.git</source>
-  </extension>
+	name="RSS Editor"
+	version="3.0.4.005"
+	provider-name="rwparris2, Team Kodi, YLLOW_DRAGON">
+	<requires>
+		<import addon="xbmc.python" version="2.25.0"/>
+	</requires>
+	<extension point="xbmc.python.script"
+		library="default.py" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">A Script for editing Kodi's built in RSS Ticker</summary>
+		<summary lang="ru_RU">Скрипт для редактирования бегущей строки RSS KODI</summary>
+		<summary lang="uk_UA">Скрипт для редагування бігучого рядка RSS KODI</summary>
+		<description lang="en_GB">A Script for editing Kodi's built in RSS Ticker</description>
+		<description lang="ru_RU">Скрипт для редактирования бегущей строки RSS KODI</description>
+		<description lang="uk_UA">Скрипт для редагування бігучого рядка RSS KODI</description>
+		<platform>all</platform>
+		<language></language>
+		<license>GNU GENERAL PUBLIC LICENSE Version 2</license>
+		<forum></forum>
+		<website></website>
+		<email>nkvoronov@gmail.com</email>
+		<source>https://github.com/nkvoronov/script.rss.editor.git</source>
+	</extension>
 </addon>
