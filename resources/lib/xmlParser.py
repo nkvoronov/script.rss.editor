@@ -9,8 +9,7 @@ def writexml(self, writer, indent="", addindent="", newl=""):
     #credit: http://ronrothman.com/public/leftbraned/xml-dom-minidom-toprettyxml-and-silly-whitespace/
     writer.write(indent+"<" + self.tagName)
     attrs = self._get_attributes()
-    a_names = attrs.keys()
-    a_names.sort()
+    a_names = sorted(attrs.keys())
     for a_name in a_names:
         writer.write(" %s=\"" % a_name)
         _write_data(writer, attrs[a_name].value)
@@ -38,13 +37,13 @@ getLS = sys.modules[ "__main__" ].LANGUAGE
 class XMLParser:
 
     def __init__(self):
-        self.RssFeedsPath = xbmc.translatePath('special://userdata/RssFeeds.xml').decode("utf-8")
+        self.RssFeedsPath = xbmc.translatePath('special://userdata/RssFeeds.xml')
         sane = self.checkRssFeedPathSanity()
         if sane:
             try:
                 self.feedsTree = parse(self.RssFeedsPath)
             except:
-                log('[script] RSS Editor --> Failed to parse ' + unicodedata.normalize( 'NFKD', self.RssFeedsPath ).encode( 'ascii', 'ignore' ))
+                log('[script] RSS Editor --> Failed to parse ' + unicodedata.normalize( 'NFKD', self.RssFeedsPath ))
                 regen = xbmcgui.Dialog().yesno(getLS(32040), getLS(32051), getLS(32052), getLS(32053))
                 if regen:
                     log('[script] RSS Editor --> Attempting to Regenerate RssFeeds.xml')
@@ -64,7 +63,7 @@ class XMLParser:
         else:
             self.feedsTree = False
             self.feedsList = False
-            log('[SCRIPT] RSS Editor --> Could not open ' + unicodedata.normalize( 'NFKD', self.RssFeedsPath ).encode( 'ascii', 'ignore' ) +'. Either the file does not exist, or its size is zero.')
+            log('[SCRIPT] RSS Editor --> Could not open ' + unicodedata.normalize( 'NFKD', self.RssFeedsPath ) +'. Either the file does not exist, or its size is zero.')
 
     def checkRssFeedPathSanity(self):
         if os.path.isfile(self.RssFeedsPath):
@@ -118,13 +117,13 @@ class XMLParser:
         return doc.toprettyxml(indent = '  ', encoding = 'UTF-8')
 
     def writeXmlToFile(self):
-        log('[SCRIPT] RSS Editor --> writing to %s' % (unicodedata.normalize( 'NFKD', self.RssFeedsPath ).encode( 'ascii', 'ignore' )))
+        log('[SCRIPT] RSS Editor --> writing to %s' % (unicodedata.normalize( 'NFKD', self.RssFeedsPath )))
         xml = self.formXml()
         #hack for standalone attribute, minidom doesn't support DOM3
-        xmlHeaderEnd = xml.find('?>')
-        xml = xml[:xmlHeaderEnd]+' standalone="yes"'+xml[xmlHeaderEnd:]
+        xmlHeaderEnd = xml.find(b'?>')
+        xml = xml[:xmlHeaderEnd] + b' standalone="yes"' + xml[xmlHeaderEnd:]
         try:
-            RssFeedsFile = open(self.RssFeedsPath, 'w')
+            RssFeedsFile = open(self.RssFeedsPath, 'wb')
             RssFeedsFile.write(xml)
             RssFeedsFile.close()
             log('[SCRIPT] RSS Editor --> write success')

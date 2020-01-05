@@ -1,6 +1,6 @@
 import os, sys
 import xbmc, xbmcgui
-from xmlParser import XMLParser
+from resources.lib.xmlParser import XMLParser
 
 #enable localization
 getLS   = sys.modules[ "__main__" ].LANGUAGE
@@ -78,7 +78,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             self.updateFeedsList()
         #change/modify set
         elif controlId == self.control_changeSet_button_id:
-            import setEditor
+            import resources.lib.setEditor as setEditor
             setEditorUI = setEditor.GUI("script-RSS_Editor.xml", CWD, "default", setNum = self.setNum)
             self.close()
             del setEditorUI

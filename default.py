@@ -17,4 +17,3 @@ if (__name__ == "__main__"):
     ui = rssEditor.GUI("script-RSS_Editor.xml", CWD, "default", setNum = 'set1')
     del ui
 
-sys.modules.clear()

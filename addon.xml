@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.rss.editor"
 	name="RSS Editor"
-	version="3.0.5.006"
+	version="3.0.5.007"
 	provider-name="rwparris2, Team Kodi, YLLOW_DRAGON">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
@@ -22,5 +22,8 @@
 		<website></website>
 		<email>nkvoronov@gmail.com</email>
 		<source>https://github.com/nkvoronov/script.rss.editor.git</source>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
 	</extension>
 </addon>
