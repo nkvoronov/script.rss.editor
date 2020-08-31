@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="script.rss.editor"
 	name="RSS Editor"
-	version="3.0.5.007"
+	version="4.0.1.008"
 	provider-name="rwparris2, Team Kodi, YLLOW_DRAGON">
 	<requires>
 		<import addon="xbmc.python" version="3.0.0"/>
@@ -25,5 +25,7 @@
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
+		<news>- fix broken ok and yesno dialogs
+- skin improvements</news>
 	</extension>
 </addon>

@@ -1,13 +1,15 @@
-import os, sys
-import xbmc, xbmcgui
-from resources.lib.xmlParser import XMLParser
+import os
+import sys
+import xbmc
+import xbmcgui
+import xbmcaddon
+from .xmlParser import XMLParser
 
 #enable localization
-getLS   = sys.modules[ "__main__" ].LANGUAGE
-CWD = sys.modules[ "__main__" ].CWD
+getLS = xbmcaddon.Addon().getLocalizedString
+CWD = xbmcaddon.Addon().getAddonInfo('path')
 
 class GUI(xbmcgui.WindowXMLDialog):
-
     def __init__(self, *args, **kwargs):
         xbmcgui.WindowXMLDialog.__init__(self, *args, **kwargs)
         self.setNum = kwargs['setNum']
@@ -15,12 +17,11 @@ class GUI(xbmcgui.WindowXMLDialog):
         if self.parser.feedsTree:
             self.doModal()
 
-
     def onInit(self):
         self.defineControls()
         self.feedsList = self.parser.feedsList[self.setNum]['feedslist'] #shortname
         if not self.feedsList:
-            xbmcgui.Dialog().ok(getLS(40)+'RssFeeds.xml', 'RssFeeds.xml '+getLS(32041), getLS(32042), getLS(32043))
+            xbmcgui.Dialog().ok(getLS(40) + 'RssFeeds.xml', 'RssFeeds.xml ' + getLS(32041) + ' ' + getLS(32042) + ' ' + getLS(32043))
             self.closeDialog()
         self.showDialog()
 
@@ -78,7 +79,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             self.updateFeedsList()
         #change/modify set
         elif controlId == self.control_changeSet_button_id:
-            import resources.lib.setEditor as setEditor
+            from . import setEditor
             setEditorUI = setEditor.GUI("script-RSS_Editor.xml", CWD, "default", setNum = self.setNum)
             self.close()
             del setEditorUI
