@@ -28,23 +28,23 @@ class GUI(xbmcgui.WindowXMLDialog):
         #actions
         self.action_cancel_dialog = ( 9, 10, 92, 216, 247, 257, 275, 61467, 61448 )
         #control ids
-        self.control_heading_label_id       = 2
-        self.control_list_label_id          = 4
-        self.control_list_id                = 10
-        self.control_modifySet_button_id    = 11
-        self.control_add_button_id          = 13
-        self.control_remove_button_id       = 14
-        self.control_ok_button_id           = 18
-        self.control_cancel_button_id       = 19
+        self.control_heading_label_id = 2
+        self.control_list_label_id = 4
+        self.control_list_id = 10
+        self.control_modifySet_button_id = 11
+        self.control_add_button_id = 13
+        self.control_remove_button_id = 14
+        self.control_ok_button_id = 18
+        self.control_cancel_button_id = 19
         #controls
-        self.heading_label      = self.getControl(self.control_heading_label_id)
-        self.list_label         = self.getControl(self.control_list_label_id)
-        self.list               = self.getControl(self.control_list_id)
-        self.add_button         = self.getControl(self.control_add_button_id)
-        self.remove_button      = self.getControl(self.control_remove_button_id)
-        self.modifySet_button   = self.getControl(self.control_modifySet_button_id)
-        self.ok_button          = self.getControl(self.control_ok_button_id)
-        self.cancel_button      = self.getControl(self.control_cancel_button_id)
+        self.heading_label = self.getControl(self.control_heading_label_id)
+        self.list_label = self.getControl(self.control_list_label_id)
+        self.list = self.getControl(self.control_list_id)
+        self.add_button = self.getControl(self.control_add_button_id)
+        self.remove_button = self.getControl(self.control_remove_button_id)
+        self.modifySet_button = self.getControl(self.control_modifySet_button_id)
+        self.ok_button = self.getControl(self.control_ok_button_id)
+        self.cancel_button = self.getControl(self.control_cancel_button_id)
         #defaults
         self.dFeedsList = [{'url':'http://feeds.feedburner.com/xbmc', 'updateinterval':'30'},
                            {'url':'http://feeds.feedburner.com/latest_xbmc_addons', 'updateinterval':'30'},
@@ -105,7 +105,7 @@ class GUI(xbmcgui.WindowXMLDialog):
         #ask user for set number
         newSetNum = self.getSetNum(oldSetLabel[3:])
         if newSetNum:
-            newSetLabel = 'set'+newSetNum
+            newSetLabel = 'set' + newSetNum
             #ask user if set contains right to left text
             rtl = self.containsRTLText()
             #copy settings from old label
@@ -119,12 +119,12 @@ class GUI(xbmcgui.WindowXMLDialog):
     def getNewSet(self):
         """Add a new set with some default values"""
         #default setNumber = find highest numbered set, then add 1
-        defaultSetNum = max([int(setNum[3:]) for setNum in self.parser.feedsList.keys()])+1
+        defaultSetNum = max([int(setNum[3:]) for setNum in self.parser.feedsList.keys()]) + 1
         #ask user for set number
         newSetNum = self.getSetNum(defaultSetNum)
         #check if set number already exists
         if newSetNum:
-            newSetLabel = 'set'+newSetNum
+            newSetLabel = 'set' + newSetNum
             #ask user if set contains right to left text
             rtl = self.containsRTLText()
             #add default information
@@ -138,7 +138,7 @@ class GUI(xbmcgui.WindowXMLDialog):
             return newSetNum
 
     def setNumExists(self, setNum):
-        if 'set'+setNum in self.parser.feedsList.keys():
+        if 'set' + setNum in self.parser.feedsList.keys():
             return True
 
     def containsRTLText(self):

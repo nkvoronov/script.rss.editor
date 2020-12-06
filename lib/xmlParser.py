@@ -3,6 +3,7 @@ import sys
 import unicodedata
 from xml.dom.minidom import parse, Document, _write_data, Node, Element
 import xbmc
+import xbmcvfs
 import xbmcaddon
 import xbmcgui
 
@@ -11,7 +12,7 @@ def log(txt):
 
 def writexml(self, writer, indent="", addindent="", newl=""):
     #credit: http://ronrothman.com/public/leftbraned/xml-dom-minidom-toprettyxml-and-silly-whitespace/
-    writer.write(indent+"<" + self.tagName)
+    writer.write(indent + "<" + self.tagName)
     attrs = self._get_attributes()
     a_names = list(attrs.keys())
     a_names.sort()
@@ -28,7 +29,7 @@ def writexml(self, writer, indent="", addindent="", newl=""):
             return
         writer.write(">%s" % (newl))
         for node in self.childNodes:
-            node.writexml(writer, indent+addindent, addindent, newl)
+            node.writexml(writer, indent + addindent, addindent, newl)
         writer.write("%s</%s>%s" % (indent, self.tagName, newl))
     else:
         writer.write("/>%s" % (newl))
@@ -41,7 +42,7 @@ getLS = xbmcaddon.Addon().getLocalizedString
 
 class XMLParser:
     def __init__(self):
-        self.RssFeedsPath = xbmc.translatePath('special://userdata/RssFeeds.xml')
+        self.RssFeedsPath = xbmcvfs.translatePath('special://userdata/RssFeeds.xml')
         sane = self.checkRssFeedPathSanity()
         if sane:
             try:
@@ -81,7 +82,7 @@ class XMLParser:
         feedsList = dict()
         sets = self.feedsTree.getElementsByTagName('set')
         for s in sets:
-            setName = 'set'+s.attributes["id"].value
+            setName = 'set' + s.attributes["id"].value
             feedsList[setName] = {'feedslist':list(), 'attrs':dict()}
             #get attrs
             for attrib in s.attributes.keys():

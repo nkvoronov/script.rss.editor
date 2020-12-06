@@ -29,23 +29,23 @@ class GUI(xbmcgui.WindowXMLDialog):
         #actions
         self.action_cancel_dialog = ( 9, 10, 92, 216, 247, 257, 275, 61467, 61448 )
         #control ids
-        self.control_heading_label_id       = 2
-        self.control_list_label_id          = 4
-        self.control_list_id                = 10
-        self.control_changeSet_button_id    = 11
-        self.control_add_button_id          = 13
-        self.control_remove_button_id       = 14
-        self.control_ok_button_id           = 18
-        self.control_cancel_button_id       = 19
+        self.control_heading_label_id = 2
+        self.control_list_label_id = 4
+        self.control_list_id = 10
+        self.control_changeSet_button_id = 11
+        self.control_add_button_id = 13
+        self.control_remove_button_id = 14
+        self.control_ok_button_id = 18
+        self.control_cancel_button_id = 19
         #controls
-        self.heading_label      = self.getControl(self.control_heading_label_id)
-        self.list_label         = self.getControl(self.control_list_label_id)
-        self.list               = self.getControl(self.control_list_id)
-        self.add_button         = self.getControl(self.control_add_button_id)
-        self.remove_button      = self.getControl(self.control_remove_button_id)
-        self.changeSet_button   = self.getControl(self.control_changeSet_button_id)
-        self.ok_button          = self.getControl(self.control_ok_button_id)
-        self.cancel_button      = self.getControl(self.control_cancel_button_id)
+        self.heading_label = self.getControl(self.control_heading_label_id)
+        self.list_label = self.getControl(self.control_list_label_id)
+        self.list = self.getControl(self.control_list_id)
+        self.add_button = self.getControl(self.control_add_button_id)
+        self.remove_button = self.getControl(self.control_remove_button_id)
+        self.changeSet_button = self.getControl(self.control_changeSet_button_id)
+        self.ok_button = self.getControl(self.control_ok_button_id)
+        self.cancel_button = self.getControl(self.control_cancel_button_id)
 
     def showDialog(self):
         self.heading_label.setLabel(getLS(32000))
@@ -122,4 +122,4 @@ class GUI(xbmcgui.WindowXMLDialog):
         if self.setNum == 'set1':
             self.list_label.setLabel(getLS(32014) % (''))
         else:
-            self.list_label.setLabel(getLS(32014) % ('('+self.setNum+')'))
+            self.list_label.setLabel(getLS(32014) % ('(' + self.setNum + ')'))
